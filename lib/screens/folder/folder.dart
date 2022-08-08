@@ -5,7 +5,6 @@ import 'package:filex/screens/folder/widgets/widgets.dart';
 import 'package:filex/utils/utils.dart';
 import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:path/path.dart' as pathlib;
 import 'package:provider/provider.dart';
 
@@ -133,7 +132,7 @@ class _FolderState extends State<Folder> with WidgetsBindingObserver {
           bottom: PathBar(
             paths: paths,
             icon: widget.path.toString().contains('emulated')
-                ? Feather.smartphone
+                ? Icons.smartphone
                 : Icons.sd_card,
             onChanged: (index) {
               print(paths[index]);
@@ -204,7 +203,7 @@ class _FolderState extends State<Folder> with WidgetsBindingObserver {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () => addDialog(context, path),
-          child: Icon(Feather.plus),
+          child: Icon(Icons.add),
           tooltip: 'Add Folder',
         ),
       ),

@@ -1,11 +1,10 @@
 import 'dart:io';
 
-import 'package:device_info/device_info.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:filex/providers/providers.dart';
 import 'package:filex/screens/about.dart';
 import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
@@ -26,7 +25,7 @@ class _SettingsState extends State<Settings> {
     if (Platform.isAndroid) {
       DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
       AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-      sdkVersion = androidInfo.version.sdkInt;
+      sdkVersion = androidInfo.version.sdkInt!;
       setState(() {});
     }
   }
@@ -44,7 +43,7 @@ class _SettingsState extends State<Settings> {
           SwitchListTile.adaptive(
             contentPadding: EdgeInsets.all(0),
             secondary: Icon(
-              Feather.eye_off,
+              Icons.hide_source,
             ),
             title: Text(
               'See hidden files',
@@ -54,7 +53,7 @@ class _SettingsState extends State<Settings> {
               Provider.of<CategoryProvider>(context, listen: false)
                   .setHidden(value);
             },
-            activeColor: Theme.of(context).accentColor,
+            activeColor: Theme.of(context).colorScheme.secondary,
           ),
           Container(
             height: 1,
@@ -65,7 +64,7 @@ class _SettingsState extends State<Settings> {
               ? SwitchListTile.adaptive(
                   contentPadding: EdgeInsets.all(0),
                   secondary: Icon(
-                    Feather.moon,
+                    Icons.mood,
                   ),
                   title: Text('Dark mode'),
                   value: Provider.of<AppProvider>(context).theme ==
@@ -81,7 +80,7 @@ class _SettingsState extends State<Settings> {
                           .setTheme(ThemeConfig.lightTheme, 'light');
                     }
                   },
-                  activeColor: Theme.of(context).accentColor,
+                  activeColor: Theme.of(context).colorScheme.secondary,
                 )
               : SizedBox(),
           MediaQuery.of(context).platformBrightness !=
@@ -94,7 +93,7 @@ class _SettingsState extends State<Settings> {
           ListTile(
             contentPadding: EdgeInsets.all(0),
             onTap: () => showLicensePage(context: context),
-            leading: Icon(Feather.file_text),
+            leading: Icon(Icons.file_copy_outlined),
             title: Text('Open source licences'),
           ),
           Container(
@@ -104,7 +103,7 @@ class _SettingsState extends State<Settings> {
           ListTile(
             contentPadding: EdgeInsets.all(0),
             onTap: () => Navigate.pushPage(context, About()),
-            leading: Icon(Feather.info),
+            leading: Icon(Icons.info),
             title: Text('About'),
           ),
           Container(

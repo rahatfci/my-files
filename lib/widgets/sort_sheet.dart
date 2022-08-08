@@ -1,7 +1,6 @@
 import 'package:filex/providers/providers.dart';
 import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class SortSheet extends StatelessWidget {
@@ -43,7 +42,7 @@ class SortSheet extends StatelessWidget {
                                     listen: false)
                                 .sort
                         ? Icon(
-                            Feather.check,
+                            Icons.check,
                             color: Colors.blue,
                             size: 16,
                           )

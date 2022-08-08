@@ -8,7 +8,8 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 class FileUtils {
-  static String waPath = '/storage/emulated/0/WhatsApp/Media/.Statuses';
+  static String waPath =
+      '/storage/emulated/0/Android/media/com.whatsapp/WhatsApp/Media';
 
   /// Convert Byte to KB, MB, .......
   static String formatBytes(bytes, decimals) {

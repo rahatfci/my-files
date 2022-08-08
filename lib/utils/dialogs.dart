@@ -44,7 +44,7 @@ class Dialogs {
                       child: Text(
                         'No',
                         style: TextStyle(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       onPressed: () => Navigator.pop(context),
@@ -57,7 +57,8 @@ class Dialogs {
                           ),
                         ),
                         side: MaterialStateProperty.all(
-                          BorderSide(color: Theme.of(context).accentColor),
+                          BorderSide(
+                              color: Theme.of(context).colorScheme.secondary),
                         ),
                       ),
                     ),
@@ -73,7 +74,7 @@ class Dialogs {
                       onPressed: () => exit(0),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Theme.of(context).accentColor),
+                            Theme.of(context).colorScheme.secondary),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),

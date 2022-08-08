@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:filex/widgets/dir_popup.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:path/path.dart';
 
 class DirectoryItem extends StatelessWidget {
@@ -27,7 +26,7 @@ class DirectoryItem extends StatelessWidget {
         width: 40,
         child: Center(
           child: Icon(
-            Feather.folder,
+            Icons.folder_copy_outlined,
           ),
         ),
       ),

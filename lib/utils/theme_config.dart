@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ThemeConfig {
-  //Colors for theme
   static Color lightPrimary = Color(0xfff3f4f9);
   static Color darkPrimary = Color(0xff1f1f1f);
   static Color lightAccent = Color(0xff597ef7);
@@ -13,7 +12,6 @@ class ThemeConfig {
   static ThemeData lightTheme = ThemeData(
     backgroundColor: lightBG,
     primaryColor: lightPrimary,
-    accentColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
       elevation: 0,
@@ -27,13 +25,15 @@ class ThemeConfig {
         color: Colors.black,
       ),
     ),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(secondary: lightAccent)
+        .copyWith(secondary: lightAccent),
   );
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     backgroundColor: darkBG,
     primaryColor: darkPrimary,
-    accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
     appBarTheme: AppBarTheme(
       elevation: 0,
@@ -47,5 +47,6 @@ class ThemeConfig {
         color: Colors.white,
       ),
     ),
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: darkAccent),
   );
 }

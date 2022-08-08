@@ -5,7 +5,6 @@ import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Splash extends StatefulWidget {
@@ -43,10 +42,11 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     startTimeout();
     SchedulerBinding.instance.addPostFrameCallback((_) {
-      SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: SystemUiOverlay.values);
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Theme.of(context).primaryColor,
         systemNavigationBarColor: Colors.black,
@@ -67,15 +67,15 @@ class _SplashState extends State<Splash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
-              Feather.folder,
-              color: Theme.of(context).accentColor,
+              Icons.folder,
+              color: Theme.of(context).colorScheme.secondary,
               size: 70.0,
             ),
             SizedBox(height: 20.0),
             Text(
               '${AppStrings.appName}',
               style: TextStyle(
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).colorScheme.secondary,
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
               ),

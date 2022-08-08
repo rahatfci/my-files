@@ -6,7 +6,6 @@ import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {
@@ -29,27 +28,22 @@ class _MainScreenState extends State<MainScreen> {
           onPageChanged: onPageChanged,
           children: <Widget>[
             Browse(),
-            Share(),
             Settings(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Theme.of(context).primaryColor,
-          selectedItemColor: Theme.of(context).accentColor,
+          selectedItemColor: Theme.of(context).colorScheme.secondary,
           unselectedItemColor: Theme.of(context).textTheme.headline1!.color,
           elevation: 4.0,
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Feather.folder),
+              icon: Icon(Icons.folder),
               label: 'Browse',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Feather.share_2),
-              label: 'FTP',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Feather.settings),
+              icon: Icon(Icons.settings),
               label: 'Settings',
             ),
           ],
@@ -70,7 +64,8 @@ class _MainScreenState extends State<MainScreen> {
     _pageController = PageController(initialPage: 0);
     SchedulerBinding.instance.addPostFrameCallback((_) {
       Provider.of<CoreProvider>(context, listen: false).checkSpace();
-      SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: SystemUiOverlay.values);
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Theme.of(context).primaryColor,
         systemNavigationBarColor: Colors.black,

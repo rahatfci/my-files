@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class Constants {
   static List<T> map<T>(List list, Function handler) {
@@ -14,36 +13,30 @@ class Constants {
   static List categories = [
     {
       'title': 'Downloads',
-      'icon': Feather.download,
+      'icon': Icons.download,
       'path': '',
       'color': Colors.purple
     },
+    {'title': 'Images', 'icon': Icons.image, 'path': '', 'color': Colors.blue},
     {
-      'title': 'Images',
-      'icon': Feather.image,
+      'title': 'Videos',
+      'icon': Icons.video_collection,
       'path': '',
-      'color': Colors.blue
+      'color': Colors.red
     },
-    {'title': 'Videos', 'icon': Feather.video, 'path': '', 'color': Colors.red},
     {
       'title': 'Audio',
-      'icon': Feather.headphones,
+      'icon': Icons.headphones,
       'path': '',
       'color': Colors.teal
     },
     {
       'title': 'Documents & Others',
-      'icon': Feather.file,
+      'icon': Icons.file_copy_outlined,
       'path': '',
       'color': Colors.pink
     },
     {'title': 'Apps', 'icon': Icons.android, 'path': '', 'color': Colors.green},
-    {
-      'title': 'Whatsapp Statuses',
-      'icon': FontAwesome.whatsapp,
-      'path': '',
-      'color': Colors.green
-    },
   ];
 
   static List sortList = [

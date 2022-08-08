@@ -10,7 +10,6 @@ import 'package:filex/screens/whatsapp_status.dart';
 import 'package:filex/utils/utils.dart';
 import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class Browse extends StatelessWidget {
@@ -36,7 +35,7 @@ class Browse extends StatelessWidget {
                 delegate: Search(themeData: Theme.of(context)),
               );
             },
-            icon: Icon(Feather.search),
+            icon: Icon(Icons.search),
           )
         ],
       ),
@@ -109,7 +108,7 @@ class _StorageSection extends StatelessWidget {
               percent: percent,
               path: path,
               title: index == 0 ? 'Device' : 'SD Card',
-              icon: index == 0 ? Feather.smartphone : Icons.sd_storage,
+              icon: index == 0 ? Icons.smartphone : Icons.sd_storage,
               color: index == 0 ? Colors.lightBlue : Colors.orange,
               usedSpace: index == 0
                   ? coreProvider.usedSpace

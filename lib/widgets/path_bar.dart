@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class PathBar extends StatelessWidget implements PreferredSizeWidget {
   final List paths;
@@ -29,7 +28,7 @@ class PathBar extends StatelessWidget implements PreferredSizeWidget {
             if (index == 0) {
               return IconButton(
                 icon: Icon(
-                  icon ?? Feather.smartphone,
+                  icon ?? Icons.smartphone,
                   color: index == paths.length - 1
                       ? Theme.of(context).accentColor
                       : Theme.of(context).textTheme.headline6!.color,
@@ -60,7 +59,7 @@ class PathBar extends StatelessWidget implements PreferredSizeWidget {
             );
           },
           separatorBuilder: (BuildContext context, int index) {
-            return Icon(Feather.chevron_right);
+            return Icon(Icons.chevron_right);
           },
         ),
       ),
