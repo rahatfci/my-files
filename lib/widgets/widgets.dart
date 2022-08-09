@@ -1,7 +1,6 @@
 export 'custom_alert.dart';
 export 'custom_divider.dart';
 export 'custom_loader.dart';
-export 'device_card.dart';
 export 'dir_item.dart';
 export 'dir_popup.dart';
 export 'file_icon.dart';

@@ -1,11 +1,10 @@
-import 'package:filex/providers/providers.dart';
-import 'package:filex/screens/browse/browse.dart';
-import 'package:filex/screens/settings.dart';
-import 'package:filex/screens/share.dart';
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/screens/browse/browse.dart';
+import 'package:my_file/screens/settings.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {

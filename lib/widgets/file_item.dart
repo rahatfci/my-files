@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/file_icon.dart';
-import 'package:filex/widgets/file_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/file_icon.dart';
+import 'package:my_file/widgets/file_popup.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path/path.dart';
 

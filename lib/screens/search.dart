@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:filex/providers/providers.dart';
-import 'package:filex/screens/folder/folder.dart';
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/dir_item.dart';
-import 'package:filex/widgets/file_item.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/screens/folder/folder.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/dir_item.dart';
+import 'package:my_file/widgets/file_item.dart';
 import 'package:provider/provider.dart';
 
 class Search extends SearchDelegate {

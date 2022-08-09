@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/widgets.dart';
 
 class Dialogs {
   static showExitDialog(BuildContext context) {

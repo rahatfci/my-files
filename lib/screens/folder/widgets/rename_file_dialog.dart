@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/widgets.dart';
 import 'package:path/path.dart' as pathlib;
 
 class RenameFileDialog extends StatefulWidget {
@@ -58,7 +58,7 @@ class _RenameFileDialogState extends State<RenameFileDialog> {
                     child: Text(
                       'Cancel',
                       style: TextStyle(
-                        color: Theme.of(context).accentColor,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     onPressed: () => Navigator.pop(context),
@@ -71,7 +71,8 @@ class _RenameFileDialogState extends State<RenameFileDialog> {
                         ),
                       ),
                       side: MaterialStateProperty.all(
-                        BorderSide(color: Theme.of(context).accentColor),
+                        BorderSide(
+                            color: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
                   ),
@@ -132,7 +133,7 @@ class _RenameFileDialogState extends State<RenameFileDialog> {
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Theme.of(context).accentColor),
+                          Theme.of(context).colorScheme.secondary),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),

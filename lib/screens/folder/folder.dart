@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:filex/providers/providers.dart';
-import 'package:filex/screens/folder/widgets/widgets.dart';
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/screens/folder/widgets/widgets.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/widgets.dart';
 import 'package:path/path.dart' as pathlib;
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,6 @@
 import 'package:device_apps/device_apps.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/widgets/widgets.dart';
 
 class AppScreen extends StatelessWidget {
   @override
@@ -18,7 +18,6 @@ class AppScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Application>? data = snapshot.data;
-            // Sort the App List on Alphabetical Order
             data!
               ..sort((app1, app2) => app1.appName
                   .toLowerCase()

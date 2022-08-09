@@ -2,10 +2,10 @@ import 'dart:io';
 import 'dart:isolate';
 import 'dart:ui';
 
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:isolate_handler/isolate_handler.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:path_provider/path_provider.dart';
 
 class CoreProvider extends ChangeNotifier {
@@ -46,19 +46,12 @@ class CoreProvider extends ChangeNotifier {
     getRecentFiles();
   }
 
-  /// I had to use a combination of [isolate_handler] plugin and
-  /// [IsolateNameServer] because compute doesnt work as my function uses
-  /// an external plugin and also [isolate_handler] plugin doesnt allow me
-  /// to pass complex data (in this case List<FileSystemEntity>). so basically
-  /// i used the [isolate_handler] to do get the file and use [IsolateNameServer]
-  /// to send it back to the main Thread
   getRecentFiles() async {
     String isolateName = 'recent';
     isolates.spawn<String>(
       getFilesWithIsolate,
       name: isolateName,
       onReceive: (val) {
-        print(val);
         isolates.kill(isolateName);
       },
       onInitialized: () => isolates.send('hey', to: isolateName),
@@ -66,8 +59,6 @@ class CoreProvider extends ChangeNotifier {
     ReceivePort _port = ReceivePort();
     IsolateNameServer.registerPortWithName(_port.sendPort, '${isolateName}_2');
     _port.listen((message) {
-      print('RECEIVED SERVER PORT');
-      print(message);
       recentFiles.addAll(message);
       setRecentLoading(false);
       _port.close();
@@ -76,7 +67,6 @@ class CoreProvider extends ChangeNotifier {
   }
 
   static getFilesWithIsolate(Map<String, dynamic> context) async {
-    print(context);
     String isolateName = context['name'];
     List<FileSystemEntity> l =
         await FileUtils.getRecentFiles(showHidden: false);

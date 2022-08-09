@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:filex/widgets/dir_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/widgets/dir_popup.dart';
 import 'package:path/path.dart';
 
 class DirectoryItem extends StatelessWidget {

@@ -25,13 +25,10 @@ class ThemeConfig {
         color: Colors.black,
       ),
     ),
-    colorScheme: ColorScheme.fromSwatch()
-        .copyWith(secondary: lightAccent)
-        .copyWith(secondary: lightAccent),
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: lightAccent),
   );
 
   static ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
     backgroundColor: darkBG,
     primaryColor: darkPrimary,
     scaffoldBackgroundColor: darkBG,
@@ -47,6 +44,9 @@ class ThemeConfig {
         color: Colors.white,
       ),
     ),
-    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: darkAccent),
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      secondary: darkAccent,
+      brightness: Brightness.dark,
+    ),
   );
 }

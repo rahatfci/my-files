@@ -30,7 +30,7 @@ class PathBar extends StatelessWidget implements PreferredSizeWidget {
                 icon: Icon(
                   icon ?? Icons.smartphone,
                   color: index == paths.length - 1
-                      ? Theme.of(context).accentColor
+                      ? Theme.of(context).colorScheme.secondary
                       : Theme.of(context).textTheme.headline6!.color,
                 ),
                 onPressed: () => onChanged(index),
@@ -49,7 +49,7 @@ class PathBar extends StatelessWidget implements PreferredSizeWidget {
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: index == paths.length - 1
-                            ? Theme.of(context).accentColor
+                            ? Theme.of(context).colorScheme.secondary
                             : Theme.of(context).textTheme.headline6!.color,
                       ),
                     ),

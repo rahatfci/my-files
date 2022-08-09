@@ -1,6 +1,6 @@
-import 'package:filex/screens/folder/folder.dart';
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/screens/folder/folder.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class StorageItem extends StatelessWidget {

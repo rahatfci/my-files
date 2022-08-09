@@ -1,15 +1,14 @@
 import 'dart:io';
 
-import 'package:filex/providers/providers.dart';
-import 'package:filex/screens/apps_screen.dart';
-import 'package:filex/screens/category.dart';
-import 'package:filex/screens/downloads.dart';
-import 'package:filex/screens/images.dart';
-import 'package:filex/screens/search.dart';
-import 'package:filex/screens/whatsapp_status.dart';
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/screens/apps_screen.dart';
+import 'package:my_file/screens/category.dart';
+import 'package:my_file/screens/downloads.dart';
+import 'package:my_file/screens/images.dart';
+import 'package:my_file/screens/search.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class Browse extends StatelessWidget {
@@ -144,18 +143,7 @@ class _CategoriesSection extends StatelessWidget {
 
         return ListTile(
           onTap: () {
-            if (index == Constants.categories.length - 1) {
-              // Check if the user has whatsapp installed
-              if (Directory(FileUtils.waPath).existsSync()) {
-                Navigate.pushPage(
-                  context,
-                  WhatsappStatus(title: '${category['title']}'),
-                );
-              } else {
-                Dialogs.showToast(
-                    'Please Install WhatsApp to use this feature');
-              }
-            } else if (index == 0) {
+            if (index == 0) {
               Navigate.pushPage(
                   context, Downloads(title: '${category['title']}'));
             } else if (index == 5) {

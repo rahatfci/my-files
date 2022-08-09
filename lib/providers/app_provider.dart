@@ -1,6 +1,6 @@
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppProvider extends ChangeNotifier {
@@ -26,7 +26,8 @@ class AppProvider extends ChangeNotifier {
     theme = value;
     SharedPreferences.getInstance().then((prefs) {
       prefs.setString('theme', c).then((val) {
-        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+            overlays: SystemUiOverlay.values);
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
           statusBarColor:
               c == 'dark' ? ThemeConfig.darkPrimary : ThemeConfig.lightPrimary,

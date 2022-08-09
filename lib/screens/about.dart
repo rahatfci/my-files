@@ -13,7 +13,11 @@ class About extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20),
         children: <Widget>[
           Text(
-            'Simple file explorer made with Flutter by JideGuru😁',
+            'Simple file explorer made with Flutter by Abdur Rahman Rahat :)',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.blueGrey),
           )
         ],
       ),

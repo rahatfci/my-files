@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:filex/providers/providers.dart';
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:mime_type/mime_type.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/widgets.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:provider/provider.dart';
 
@@ -50,8 +50,8 @@ class _ImagesState extends State<Images> {
             appBar: AppBar(
               title: Text('${widget.title}'),
               bottom: TabBar(
-                indicatorColor: Theme.of(context).accentColor,
-                labelColor: Theme.of(context).accentColor,
+                indicatorColor: Theme.of(context).colorScheme.secondary,
+                labelColor: Theme.of(context).colorScheme.secondary,
                 unselectedLabelColor:
                     Theme.of(context).textTheme.caption!.color,
                 isScrollable: provider.imageTabs.length < 3 ? false : true,
@@ -170,11 +170,7 @@ class _MediaTile extends StatelessWidget {
                 errorBuilder: (b, o, c) {
                   return Icon(Icons.image);
                 },
-                image: ResizeImage(
-                  FileImage(File(file.path)),
-                  width: 150,
-                  height: 150,
-                ),
+                image: FileImage(File(file.path)),
               ),
       ),
     );

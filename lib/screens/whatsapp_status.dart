@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/video_thumbnail.dart';
 import 'package:flutter/material.dart';
 import 'package:mime_type/mime_type.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/video_thumbnail.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path/path.dart';
 

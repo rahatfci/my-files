@@ -1,9 +1,9 @@
-import 'package:filex/providers/providers.dart';
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/custom_divider.dart';
-import 'package:filex/widgets/file_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/custom_divider.dart';
+import 'package:my_file/widgets/file_item.dart';
 import 'package:provider/provider.dart';
 
 class Downloads extends StatefulWidget {
@@ -38,8 +38,8 @@ class _DownloadsState extends State<Downloads> {
             appBar: AppBar(
               title: Text('${widget.title}'),
               bottom: TabBar(
-                indicatorColor: Theme.of(context).accentColor,
-                labelColor: Theme.of(context).accentColor,
+                indicatorColor: Theme.of(context).colorScheme.secondary,
+                labelColor: Theme.of(context).colorScheme.secondary,
                 unselectedLabelColor:
                     Theme.of(context).textTheme.caption!.color,
                 isScrollable: false,

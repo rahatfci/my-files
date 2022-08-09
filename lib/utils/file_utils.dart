@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:filex/utils/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:mime_type/mime_type.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -109,7 +109,6 @@ class FileUtils {
         }
       } else {
         if (!file.path.contains('/storage/emulated/0/Android')) {
-//          print(file.path);
           if (!showHidden) {
             if (!file.isHidden) {
               files.addAll(

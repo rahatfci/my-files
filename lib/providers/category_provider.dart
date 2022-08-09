@@ -2,10 +2,10 @@ import 'dart:io';
 import 'dart:isolate';
 import 'dart:ui';
 
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:isolate_handler/isolate_handler.dart';
 import 'package:mime_type/mime_type.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -93,12 +93,9 @@ class CategoryProvider extends ChangeNotifier {
   }
 
   static getAllFilesWithIsolate(Map<String, dynamic> context) async {
-    print(context);
     String isolateName = context['name'];
-    print('Get files');
     List<FileSystemEntity> files =
         await FileUtils.getAllFiles(showHidden: false);
-    print('Files $files');
     final messenger = HandledIsolate.initialize(context);
     try {
       final SendPort? send =

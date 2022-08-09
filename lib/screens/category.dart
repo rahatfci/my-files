@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:filex/providers/providers.dart';
-import 'package:filex/utils/utils.dart';
-import 'package:filex/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/utils/utils.dart';
+import 'package:my_file/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class Category extends StatefulWidget {
@@ -49,8 +49,8 @@ class _CategoryState extends State<Category> {
                   appBar: AppBar(
                     title: Text('${widget.title}'),
                     bottom: TabBar(
-                      indicatorColor: Theme.of(context).accentColor,
-                      labelColor: Theme.of(context).accentColor,
+                      indicatorColor: Theme.of(context).colorScheme.secondary,
+                      labelColor: Theme.of(context).colorScheme.secondary,
                       unselectedLabelColor:
                           Theme.of(context).textTheme.caption!.color,
                       isScrollable:

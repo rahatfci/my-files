@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:filex/providers/providers.dart';
-import 'package:filex/screens/about.dart';
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:my_file/providers/providers.dart';
+import 'package:my_file/screens/about.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
@@ -83,19 +83,6 @@ class _SettingsState extends State<Settings> {
                   activeColor: Theme.of(context).colorScheme.secondary,
                 )
               : SizedBox(),
-          MediaQuery.of(context).platformBrightness !=
-                  ThemeConfig.darkTheme.brightness
-              ? Container(
-                  height: 1,
-                  color: Theme.of(context).dividerColor,
-                )
-              : SizedBox(),
-          ListTile(
-            contentPadding: EdgeInsets.all(0),
-            onTap: () => showLicensePage(context: context),
-            leading: Icon(Icons.file_copy_outlined),
-            title: Text('Open source licences'),
-          ),
           Container(
             height: 1,
             color: Theme.of(context).dividerColor,

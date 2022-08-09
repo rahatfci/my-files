@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:filex/screens/main_screen/main_screen.dart';
-import 'package:filex/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:my_file/screens/main_screen/main_screen.dart';
+import 'package:my_file/utils/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Splash extends StatefulWidget {
